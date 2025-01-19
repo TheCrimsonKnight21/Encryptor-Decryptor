@@ -1,0 +1,15 @@
+C:\Users\COUGAR\source\repos\Encriptor_Decriptor\Encriptor_Decriptor\bin\Debug\net6.0\Encriptor_Decriptor.exe
+C:\Users\COUGAR\source\repos\Encriptor_Decriptor\Encriptor_Decriptor\bin\Debug\net6.0\Encriptor_Decriptor.deps.json
+C:\Users\COUGAR\source\repos\Encriptor_Decriptor\Encriptor_Decriptor\bin\Debug\net6.0\Encriptor_Decriptor.runtimeconfig.json
+C:\Users\COUGAR\source\repos\Encriptor_Decriptor\Encriptor_Decriptor\bin\Debug\net6.0\Encriptor_Decriptor.dll
+C:\Users\COUGAR\source\repos\Encriptor_Decriptor\Encriptor_Decriptor\bin\Debug\net6.0\Encriptor_Decriptor.pdb
+C:\Users\COUGAR\source\repos\Encriptor_Decriptor\Encriptor_Decriptor\obj\Debug\net6.0\Encriptor_Decriptor.csproj.AssemblyReference.cache
+C:\Users\COUGAR\source\repos\Encriptor_Decriptor\Encriptor_Decriptor\obj\Debug\net6.0\Encriptor_Decriptor.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\COUGAR\source\repos\Encriptor_Decriptor\Encriptor_Decriptor\obj\Debug\net6.0\Encriptor_Decriptor.AssemblyInfoInputs.cache
+C:\Users\COUGAR\source\repos\Encriptor_Decriptor\Encriptor_Decriptor\obj\Debug\net6.0\Encriptor_Decriptor.AssemblyInfo.cs
+C:\Users\COUGAR\source\repos\Encriptor_Decriptor\Encriptor_Decriptor\obj\Debug\net6.0\Encriptor_Decriptor.csproj.CoreCompileInputs.cache
+C:\Users\COUGAR\source\repos\Encriptor_Decriptor\Encriptor_Decriptor\obj\Debug\net6.0\Encriptor_Decriptor.dll
+C:\Users\COUGAR\source\repos\Encriptor_Decriptor\Encriptor_Decriptor\obj\Debug\net6.0\refint\Encriptor_Decriptor.dll
+C:\Users\COUGAR\source\repos\Encriptor_Decriptor\Encriptor_Decriptor\obj\Debug\net6.0\Encriptor_Decriptor.pdb
+C:\Users\COUGAR\source\repos\Encriptor_Decriptor\Encriptor_Decriptor\obj\Debug\net6.0\Encriptor_Decriptor.genruntimeconfig.cache
+C:\Users\COUGAR\source\repos\Encriptor_Decriptor\Encriptor_Decriptor\obj\Debug\net6.0\ref\Encriptor_Decriptor.dll

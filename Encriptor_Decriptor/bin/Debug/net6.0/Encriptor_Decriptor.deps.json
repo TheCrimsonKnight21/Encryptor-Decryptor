@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Encriptor_Decriptor/1.0.0": {
+        "runtime": {
+          "Encriptor_Decriptor.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Encriptor_Decriptor/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
