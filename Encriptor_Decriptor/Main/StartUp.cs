@@ -1,5 +1,6 @@
 ﻿using Encryptor_Decryptor.Main.UserRepository;
 using Encryptor_Decryptor.Main.Utilities.Messages;
+using Encryptor_Decryptor.Main.Utilities;
 using System.Diagnostics;
 using System.Reflection.PortableExecutable;
 using System.Security.Cryptography;
@@ -9,21 +10,19 @@ namespace Encryptor_Decryptor.Main
 {
     public class StartUp
     {
-        private static readonly Random Random = new Random();
-        
-
         private static void Main(string[] args)
         {
-            Console.OutputEncoding = System.Text.Encoding.Unicode;
-            Console.InputEncoding = System.Text.Encoding.Unicode;
+            Console.OutputEncoding = Encoding.Unicode;
+            Console.InputEncoding = Encoding.Unicode;
             Console.CursorVisible = false;
             UsersRepository userRepository = new UsersRepository();
             
+            #region Main Menu
 
             while (true)
             {
-                DisplayMainMenu();
-                var choice = GetKeyInput();
+                MenuDisplay.ShowMainMenu();
+                var choice = InputHandler.GetValidatedKey(new[] {ConsoleKey.D1, ConsoleKey.D2, ConsoleKey.D0});
 
                 switch (choice)
                 {
@@ -34,7 +33,9 @@ namespace Encryptor_Decryptor.Main
                     case ConsoleKey.D2:
                         LoginOrCreateAccount(userRepository);
                         break;
-
+                    case ConsoleKey.D0:
+                        Environment.Exit(0);
+                        break;
                     default:
                         Console.WriteLine("Invalid choice. Please try again.");
                         break;
@@ -42,15 +43,8 @@ namespace Encryptor_Decryptor.Main
             }
         }
 
-        #region Main Menu
-        private static void DisplayMainMenu()
-        {
-            Console.Clear();
-            Console.WriteLine("Press 1 for Symmetrical Encrypting/Decrypting");
-            Console.WriteLine("Press 2 for Asymmetric Encrypting/Decrypting");
-        }
 
-       
+        
         #endregion
 
         #region Symmetrical Encryption/Decryption
@@ -58,8 +52,8 @@ namespace Encryptor_Decryptor.Main
         {
             while (true)
             {
-                DisplaySymmetricalMenu();
-                var choice = GetKeyInput();
+                MenuDisplay.ShowSymmetricalMenu();
+                var choice = InputHandler.GetValidatedKey(new[] { ConsoleKey.D1, ConsoleKey.D2,ConsoleKey.D3 , ConsoleKey.D0 });
 
                 switch (choice)
                 {
@@ -85,24 +79,12 @@ namespace Encryptor_Decryptor.Main
             }
         }
 
-        private static void DisplaySymmetricalMenu()
-        {
-            Console.Clear();
-            Console.WriteLine("Press 1 for Encrypting");
-            Console.WriteLine("Press 2 for Decrypting");
-            Console.WriteLine("Press 3 to Go Back");
-            Console.WriteLine("Press 0 to Quit");
-        }
 
         private static void HandleSymmetricalEncryption()
         {
-            Console.Clear();
-            Console.WriteLine("Press 1 for Direct Encrypting");
-            Console.WriteLine("Press 2 for File Encrypting");
-            Console.WriteLine("Press 3 to Go Back");
-            Console.WriteLine("Press 0 to Quit");
+            MenuDisplay.ShowSymmetricalEncryptionOptions();
 
-            var choice = GetKeyInput();
+            var choice = InputHandler.GetValidatedKey(new[] { ConsoleKey.D1, ConsoleKey.D2, ConsoleKey.D3 ,ConsoleKey.D0 });
             switch (choice)
             {
                 case ConsoleKey.D1:
@@ -143,6 +125,9 @@ namespace Encryptor_Decryptor.Main
 
             Console.WriteLine($"Encryption Key: {encryptor.Key}");
             Console.WriteLine($"Encrypted Message: {encryptor.Encripted}");
+            Console.WriteLine();
+            Console.WriteLine("Press any key to go back");
+            Console.ReadKey();
         }
 
         private static void FileSymmetricalEncryption()
@@ -162,17 +147,15 @@ namespace Encryptor_Decryptor.Main
 
             Console.WriteLine($"File encrypted successfully.");
             Console.WriteLine($"Encryption Key: {encryptor.Key}");
+            Console.WriteLine();
+            Console.WriteLine("Press any key to go back");
+            Console.ReadKey();
         }
 
         private static void HandleSymmetricalDecryption()
         {
-            Console.Clear();
-            Console.WriteLine("Press 1 for Direct Decrypting");
-            Console.WriteLine("Press 2 for File Decrypting");
-            Console.WriteLine("Press 3 to Go Back");
-            Console.WriteLine("Press 0 to Quit");
-
-            var choice = GetKeyInput();
+            MenuDisplay.ShowSymmetricalDecryptionOptions();
+            var choice = InputHandler.GetValidatedKey(new[] { ConsoleKey.D1, ConsoleKey.D2, ConsoleKey.D3, ConsoleKey.D0 });
             switch (choice)
             {
                 case ConsoleKey.D1:
@@ -208,6 +191,9 @@ namespace Encryptor_Decryptor.Main
             decryptor.Decrypt();
 
             Console.WriteLine($"Decrypted Message: {decryptor.Message}");
+            Console.WriteLine();
+            Console.WriteLine("Press any button to go back");
+            Console.ReadKey();
         }
 
         private static void FileSymmetricalDecryption()
@@ -228,33 +214,44 @@ namespace Encryptor_Decryptor.Main
             decryptor.DecryptFile(filePath, key);
 
             Console.WriteLine("File decrypted successfully.");
+            Console.WriteLine();
+            Console.WriteLine("Press any button to go back");
+            Console.ReadKey();
         }
         #endregion
 
         #region Asymmetrical Encryption/Decryption
         private static void LoginOrCreateAccount(UsersRepository userRepository)
         {
-            Console.Clear();
-            Console.WriteLine("You must be logged in to send encrypted messages!");
-            Console.WriteLine();
-            Console.WriteLine("Press 1 to log in");
-            Console.WriteLine("Press 2 to create an account");
-
             while (true)
             {
-                if (Console.KeyAvailable)
+                while (true)
                 {
-                    var key = Console.ReadKey();
-                    if (key.Key == ConsoleKey.D1)
+                    MenuDisplay.ShowLoginOrCreateAccount();
+                    var choice = InputHandler.GetValidatedKey(new[] { ConsoleKey.D1, ConsoleKey.D2, ConsoleKey.D3, ConsoleKey.D0 });
+                    if (choice == ConsoleKey.D1)
                     {
                         Login(userRepository);
+                        break;
+
                     }
-                    else if (key.Key == ConsoleKey.D2)
+                    else if (choice == ConsoleKey.D2)
                     {
                         CreateAccount(userRepository);
+                        break;
                     }
+                    else if (choice == ConsoleKey.D3)
+                    {
+                        return;
+                    }
+                    else if (choice == ConsoleKey.D0)
+                    {
+                        Environment.Exit(0);
+                    }
+                    
                 }
             }
+
         }
 
         private static void Login(UsersRepository userRepository)
@@ -285,6 +282,7 @@ namespace Encryptor_Decryptor.Main
             Console.Clear();
             Console.WriteLine($"Welcome {username}");
             ShowUserMenu(username, userRepository);
+            return;
         }
 
         private static void CreateAccount(UsersRepository userRepository)
@@ -308,6 +306,7 @@ namespace Encryptor_Decryptor.Main
 
             Console.WriteLine($"Account created for {username}.");
             ShowUserMenu(username, userRepository);
+            return;
         }
 
         private static void ShowUserMenu(string username, UsersRepository userRepository)
@@ -316,11 +315,7 @@ namespace Encryptor_Decryptor.Main
             {
                 Console.Clear();
                 int unreadFiles = Directory.GetFiles(userRepository.GetByName(username).InboxPath).Length;
-                Console.WriteLine($"Welcome {username}");
-                Console.WriteLine($"You have {unreadFiles} file(s) in your inbox.");
-                Console.WriteLine("Press 1 to read inbox");
-                Console.WriteLine("Press 2 to send a message/file to another user");
-                Console.WriteLine("Press 0 to log out");
+                MenuDisplay.ShowUserMenu(username, unreadFiles);
 
                 var key = Console.ReadKey();
                 if (key.Key == ConsoleKey.D1)
@@ -333,7 +328,7 @@ namespace Encryptor_Decryptor.Main
                 }
                 else if (key.Key == ConsoleKey.D0)
                 {
-                    break;  // Logout and go back to the start
+                    return;  // Logout and go back to the start
                 }
             }
         }

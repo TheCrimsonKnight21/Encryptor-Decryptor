@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ZBook\\source\\repos\\Encryptor_Decryptor\\Encriptor_Decriptor\\Encryptor_Decryptor.csproj": {}
+    "C:\\Users\\COUGAR\\Source\\Repos\\Encryptor-Decryptor-GitHub\\Encriptor_Decriptor\\Encryptor_Decryptor.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ZBook\\source\\repos\\Encryptor_Decryptor\\Encriptor_Decriptor\\Encryptor_Decryptor.csproj": {
+    "C:\\Users\\COUGAR\\Source\\Repos\\Encryptor-Decryptor-GitHub\\Encriptor_Decriptor\\Encryptor_Decryptor.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ZBook\\source\\repos\\Encryptor_Decryptor\\Encriptor_Decriptor\\Encryptor_Decryptor.csproj",
+        "projectUniqueName": "C:\\Users\\COUGAR\\Source\\Repos\\Encryptor-Decryptor-GitHub\\Encriptor_Decriptor\\Encryptor_Decryptor.csproj",
         "projectName": "Encryptor_Decryptor",
-        "projectPath": "C:\\Users\\ZBook\\source\\repos\\Encryptor_Decryptor\\Encriptor_Decriptor\\Encryptor_Decryptor.csproj",
-        "packagesPath": "C:\\Users\\ZBook\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ZBook\\source\\repos\\Encryptor_Decryptor\\Encriptor_Decriptor\\obj\\",
+        "projectPath": "C:\\Users\\COUGAR\\Source\\Repos\\Encryptor-Decryptor-GitHub\\Encriptor_Decriptor\\Encryptor_Decryptor.csproj",
+        "packagesPath": "C:\\Users\\COUGAR\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\COUGAR\\Source\\Repos\\Encryptor-Decryptor-GitHub\\Encriptor_Decriptor\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\ZBook\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "D:\\AppData\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,7 +26,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

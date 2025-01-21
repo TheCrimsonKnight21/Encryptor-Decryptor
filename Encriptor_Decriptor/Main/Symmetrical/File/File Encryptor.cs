@@ -43,7 +43,7 @@ namespace Encryptor_Decryptor
             StringBuilder sb = new StringBuilder();
             for (int i = 0; i < 5; i++)
             {
-                int r = random.Next(97, 127);
+                int r = random.Next(100, 199);
 
                 sb.Append(r);
             }
